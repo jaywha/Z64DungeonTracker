@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Z64DungeonTracker.Controllers;
 
 namespace Z64DungeonTracker
 {
@@ -23,6 +25,35 @@ namespace Z64DungeonTracker
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void Test()
+        {
+            var userDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\z64trackers\";
+            var cfgFile = Path.Combine(userDocsPath, "z64dungeontracker.txt");
+            if (File.Exists(cfgFile))
+            {
+                var parts = File.ReadAllText(cfgFile).Split(',');
+                var connectionString = parts[0];
+                var dbName = parts[1];
+                var collection = parts[2];
+
+                try
+                {
+                    var db = new MongoDBController(connectionString, dbName, collection);
+                    foreach (var dungeon in db.Read())
+                    {
+                        Debug.WriteLine(dungeon);
+                    }
+                } catch(Exception e) {
+                    Debug.WriteLine($"<Error> {e.Message}{Environment.NewLine}{e.Source}");
+                }
+            }
+        }
+
+        private void mnuiTest_Click(object sender, RoutedEventArgs e)
+        {
+            Test();
         }
     }
 }
