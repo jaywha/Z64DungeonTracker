@@ -40,7 +40,7 @@ namespace Z64DungeonTracker
 
                 try
                 {
-                    var db = new MongoDBController(connectionString, dbName, collection);
+                    var db = new DungeonController(connectionString, dbName, collection);
                     foreach (var dungeon in db.Read())
                     {
                         Debug.WriteLine(dungeon);

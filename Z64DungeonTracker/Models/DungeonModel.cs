@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace Z64DungeonTracker.Models
 {
-    public record DungeonModel
+    public record DungeonModel : BaseModel
     {
-        [BsonElement("_id")]
-        public ObjectId Id { get; set; }
-
         [BsonElement("Entrance")]
         public string? Entrance { get; private set; }
 
