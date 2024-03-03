@@ -10,14 +10,25 @@
 TextElement.Foreground="{DynamicResource MaterialDesignDarkForeground}"
 TextElement.FontWeight="Medium"
 TextElement.FontSize="12"
-FontFamily="{materialDesign:MaterialDesignFont}">
-    <Grid x:Name="grdMain">
-        <ComboBox x:Name="cmbxDropdown"
-          Style="{DynamicResource MaterialDesignFloatingHintComboBox}" 
-          materialDesign:HintAssist.Hint="Actual dungeon is..."
-          Foreground="DarkOrange"
-          Background="#7FF0F8FF"
-          ItemsSource="{Binding Dungeons}"
-          />
-    </Grid>
+FontFamily="{materialDesign:MaterialDesignFont}"
+             Opacity="0.5">
+    <Viewbox x:Name="vwbxFlexMain" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid x:Name="grdMain">
+            <ComboBox x:Name="cmbxDropdown"
+                Style="{DynamicResource MaterialDesignFloatingHintComboBox}" 
+                materialDesign:HintAssist.Foreground="NavajoWhite"
+                materialDesign:HintAssist.Hint="{Binding Path=Title, ElementName=ucDungeonTracker}"
+                Foreground="Red"
+                Background="{DynamicResource MaterialDesignDarkBackground}"
+                ItemsSource="{Binding Dungeons}" MouseEnter="cmbxDropdown_MouseEnter" MouseLeave="cmbxDropdown_MouseLeave" MouseRightButtonUp="cmbxDropdown_MouseRightButtonUp">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Background" Value="Black"/>
+                        <Setter Property="BorderBrush" Value="Purple"/>
+                        <Setter Property="Foreground" Value="LimeGreen"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+        </Grid>
+    </Viewbox>
 </UserControl>

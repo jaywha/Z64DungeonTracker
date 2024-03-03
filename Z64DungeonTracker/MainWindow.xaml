@@ -28,25 +28,29 @@
             <GradientStop Color="#FF2D002F" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid x:Name="grdMain" Margin="3">
+    <materialDesign:DialogHost x:Name="dlgHost">
+        <materialDesign:DialogHost.DialogContent>
+            <Label Content="WIP"/>
+        </materialDesign:DialogHost.DialogContent>
+        <Grid x:Name="grdMain" Margin="3">        
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="95*"/>
         </Grid.RowDefinitions>
         <Menu x:Name="mnuAppMenu" HorizontalAlignment="Left" Grid.Row="0">
-            <MenuItem x:Name="mnuiFile" Width="128" Height="20" Foreground="White">
+            <MenuItem x:Name="mnuiFile" Width="111" Height="20" Foreground="White"
+                      Background="{Binding Path=Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="File"/>
                         <TextBlock Text="File" Padding="2"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem x:Name="mnuiTest" Click="mnuiTest_Click" Foreground="AntiqueWhite"
-                          Background="{Binding Path=Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                <MenuItem x:Name="mnuiTest" Click="mnuiTest_Click" Foreground="AntiqueWhite">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Flask"/>
-                            <TextBlock Text="Test" Padding="2"/>
+                            <materialDesign:PackIcon Kind="Room"/>
+                            <TextBlock Text="Load Room..." Padding="2"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
@@ -97,19 +101,19 @@
                         <Image Grid.ColumnSpan="18" Grid.RowSpan="10" Source="/Images/oot_map.jpg" />
 
                         <!--#region OoT Dungeon Controls -->
-                        <uc:uccDungeonDropdown x:Name="cmbxDeku" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxDC" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="1"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxJabu" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="2"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxBOTW" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="3"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxDeku" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6" Title="Deku"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxDC" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="1" Title="DC"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxJabu" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="2" Title="Jabu"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxBOTW" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="3" Title="BOTW"/>
                         
-                        <uc:uccDungeonDropdown x:Name="cmbxGTG" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="2"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxIceCavern" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="0"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxGTG" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="2" Title="GTG"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxIceCavern" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="0" Title="IceCavern"/>
 
-                        <uc:uccDungeonDropdown x:Name="cmbxForest" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxFire" Grid.Column="10" Grid.ColumnSpan="4" Grid.Row="0"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxWater" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="10"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxSpirit" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxShadow" Grid.Column="9" Grid.ColumnSpan="4" Grid.Row="2"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxForest" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4" Title="Forest"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxFire" Grid.Column="10" Grid.ColumnSpan="4" Grid.Row="0" Title="Fire"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxWater" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="10" Title="Water"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxSpirit" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6" Title="Spirit"/>
+                        <uc:uccDungeonDropdown x:Name="cmbxShadow" Grid.Column="9" Grid.ColumnSpan="4" Grid.Row="2" Title="Shadow"/>
                         <!--#endregion-->
                     </Grid>
                 </TabItem.Content>
@@ -179,4 +183,5 @@
             </TabItem>
         </TabControl>
     </Grid>
+    </materialDesign:DialogHost>
 </Window>

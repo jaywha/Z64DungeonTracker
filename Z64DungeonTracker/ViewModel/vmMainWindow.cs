@@ -4,15 +4,18 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace Z64DungeonTracker.ViewModel
 {
-    public class vmMainWindow
+    public class vmMainWindow : DependencyObject
     {
         public ObservableCollection<string> Dungeons { get; private set; }
 
         public vmMainWindow() {
             Dungeons = new ObservableCollection<string>() {
+                "?",
                 "Deku",
                 "DC",
                 "BOTW",
@@ -38,5 +41,8 @@ namespace Z64DungeonTracker.ViewModel
                 "Secret Shrine"
             };
         }
+
+        public Brush FinishedColor { get; set; } = Brushes.Green;
+        public Brush UnfinishedColor { get; set; } = Brushes.Red;
     }
 }

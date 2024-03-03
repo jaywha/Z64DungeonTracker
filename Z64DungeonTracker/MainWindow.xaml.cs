@@ -41,7 +41,7 @@ namespace Z64DungeonTracker
                 try
                 {
                     var db = new DungeonController(connectionString, dbName, collection);
-                    foreach (var dungeon in db.Read())
+                    foreach (var dungeon in db.ReadAll())
                     {
                         Debug.WriteLine(dungeon);
                     }

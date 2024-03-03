@@ -26,6 +26,16 @@ namespace Z64DungeonTracker.UserControls
     {
         public vmMainWindow dataContextVM { get; } = new();
 
+        public string? Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register("Title", typeof(string), typeof(uccDungeonDropdown), new PropertyMetadata(""));
+
         public uccDungeonDropdown()
         {
             InitializeComponent();
@@ -38,6 +48,28 @@ namespace Z64DungeonTracker.UserControls
             //dlgSelectConfig.ShowDialog()
 
             dataContextVM.Dungeons.Clear();
+        }
+
+        private void cmbxDropdown_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Opacity = 1.0;
+        }
+
+        private void cmbxDropdown_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Opacity = 0.5;
+        }
+
+        private void cmbxDropdown_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (cmbxDropdown.Foreground == dataContextVM.UnfinishedColor)
+            {
+                cmbxDropdown.Foreground = dataContextVM.FinishedColor;
+            }
+            else
+            {
+                cmbxDropdown.Foreground = dataContextVM.UnfinishedColor;
+            }
         }
     }
 }
