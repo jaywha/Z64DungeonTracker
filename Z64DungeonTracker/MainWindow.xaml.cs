@@ -33,7 +33,14 @@ namespace Z64DungeonTracker
             var cfgFile = Path.Combine(userDocsPath, "z64dungeontracker.txt");
             if (File.Exists(cfgFile))
             {
-                var parts = File.ReadAllText(cfgFile).Split(',');
+                var db_configs = new List<string[]>();
+                foreach (var line in File.ReadLines(cfgFile))
+                {
+                    db_configs.Add(line.Split(','));
+                }
+
+                // dungeons
+                var parts = db_configs[0];
                 var connectionString = parts[0];
                 var dbName = parts[1];
                 var collection = parts[2];
@@ -41,12 +48,38 @@ namespace Z64DungeonTracker
                 try
                 {
                     var db = new DungeonController(connectionString, dbName, collection);
-                    foreach (var dungeon in db.ReadAll())
+                    foreach (var dungeon in db.GetRoom("42-bac"))
+                    {
+                        Debug.WriteLine(dungeon);
+                    }
+
+                    Debug.WriteLine("===========");
+
+                    foreach (var dungeon in db.GetRoom("87-a1c"))
                     {
                         Debug.WriteLine(dungeon);
                     }
                 } catch(Exception e) {
-                    Debug.WriteLine($"<Error> {e.Message}{Environment.NewLine}{e.Source}");
+                    Debug.WriteLine($"<Error> Dungeons: {e.Message}{Environment.NewLine}{e.Source}");
+                }
+
+                // rooms
+                parts = db_configs[1];
+                connectionString = parts[0];
+                dbName = parts[1];
+                collection = parts[2];
+
+                try
+                {
+                    var db = new RoomController(connectionString, dbName, collection);
+                    foreach (var room in db.ReadAll())
+                    {
+                        Debug.WriteLine(room);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine($"<Error> Rooms: {e.Message}{Environment.NewLine}{e.Source}");
                 }
             }
         }

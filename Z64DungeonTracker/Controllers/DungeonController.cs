@@ -14,5 +14,12 @@ namespace Z64DungeonTracker.Controllers
     {
         public DungeonController(string conn_string, string db_name, string collection_name)
             : base(conn_string, db_name, collection_name) { }
+
+        public List<DungeonModel> GetRoom(string seed) =>
+            Client
+                .GetDatabase(DBName)
+                .GetCollection<DungeonModel>(DBCollection)
+                .Find(dungeon => dungeon.Seed!.Equals(seed))
+                .ToList();
     }
 }

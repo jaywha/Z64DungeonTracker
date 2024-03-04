@@ -22,6 +22,9 @@ namespace Z64DungeonTracker.Models
         [BsonElement("IsCleared")]
         public bool IsCleared { get; private set; }
 
+        [BsonElement("Seed")]
+        public string? Seed { get; private set; }
+
         public DungeonModel(string e, string a, string b, bool cleared)
         {
             Entrance = e;
@@ -31,7 +34,7 @@ namespace Z64DungeonTracker.Models
         }
 
         public override string ToString()
-            => $"[{(IsCleared ? "CLEAR" : "TODO")}] {Entrance} leads to {Actual} with {Boss}";
+            => $"For Room {Seed ?? "UNSET"}: [{(IsCleared ? "CLEAR" : "TODO")}] {Entrance} leads to {Actual} with {Boss}";
         
     }
 }
