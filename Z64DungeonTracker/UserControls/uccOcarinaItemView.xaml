@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Z64DungeonTracker.UserControls.uccOcarinaItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Z64DungeonTracker.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="22.5*"/>
+            <RowDefinition Height="22.5*"/>
+            <RowDefinition Height="22.5*"/>
+            <RowDefinition Height="22.5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.RowSpan="6" Grid.ColumnSpan="8" Source="/Images/Items/oot_item_background.png" />
+        <Image Grid.Column="5" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/arrow_fire.jpg" Stretch="Fill" Tag="0,4"  MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="5" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/arrow_ice.jpg" Stretch="Fill" Tag="1,5" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="5" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/arrow_light.jpg" Stretch="Fill" Tag="2,4" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="1" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/deku_stick.jpg" Stretch="Fill" Tag="0,0" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="2" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/deku_nut.jpg" Stretch="Fill" Tag="0,1" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="3" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/bomb.jpg" Stretch="Fill" Tag="0,2" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="4" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/bow.jpg" Stretch="Fill" Tag="0,3" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="6" Margin="5" Grid.Row="1" Source="/Images/Items/oot_items/dins_fire.jpg" Stretch="Fill" Tag="0,5" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="6" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/farores_wind.jpg" Stretch="Fill" Tag="1,6" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="6" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/nayrus_love.jpg" Stretch="Fill" Tag="2,5" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="1" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/slingshot.jpg" Stretch="Fill" Tag="1,0" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="2" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/ocarina_fairy.jpg" Stretch="Fill" Tag="1,1" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="3" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/bombchu.jpg" Stretch="Fill" Tag="1,2" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="4" Margin="5" Grid.Row="2" Source="/Images/Items/oot_items/hookshot.jpg" Stretch="Fill" Tag="1,4" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="1" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/boomerang.jpg" Stretch="Fill" Tag="2,0" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="2" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/lens.jpg" Stretch="Fill" Tag="2,1" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="3" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/magic_bean.jpg" Stretch="Fill" Tag="2,2" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="4" Margin="5" Grid.Row="3" Source="/Images/Items/oot_items/hammer.jpg" Stretch="Fill" Tag="2,3" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="1" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/bottle_empty.jpg" Stretch="Fill" Tag="3,0" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="2" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/bottle_empty.jpg" Stretch="Fill" Tag="3,1" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="3" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/bottle_empty.jpg" Stretch="Fill" Tag="3,2" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="4" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/bottle_empty.jpg" Stretch="Fill" Tag="3,3" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="6" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/zelda_letter.jpg" Stretch="Fill" Tag="3,5" MouseDown="Image_MouseDown" Opacity="0.5"/>
+        <Image Grid.Column="5" Margin="5" Grid.Row="4" Source="/Images/Items/oot_items/cojiro.jpg" Stretch="Fill" Tag="3,4" MouseDown="Image_MouseDown" Opacity="0.5"/>
+
+    </Grid>
+    </Viewbox>
+</UserControl>

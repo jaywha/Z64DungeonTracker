@@ -8,6 +8,79 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Items\oot_items\arrow_fire.jpg" />
+    <None Remove="Images\Items\oot_items\arrow_ice.jpg" />
+    <None Remove="Images\Items\oot_items\arrow_light.jpg" />
+    <None Remove="Images\Items\oot_items\bomb.jpg" />
+    <None Remove="Images\Items\oot_items\bombchu.jpg" />
+    <None Remove="Images\Items\oot_items\boomerang.jpg" />
+    <None Remove="Images\Items\oot_items\boots_hover.jpg" />
+    <None Remove="Images\Items\oot_items\boots_iron.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_big_poe.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_blue.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_blue_fire.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_bug.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_empty.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_fairy.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_fish.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_green.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_letter.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_milk.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_milk_half.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_poe.jpg" />
+    <None Remove="Images\Items\oot_items\bottle_red.jpg" />
+    <None Remove="Images\Items\oot_items\bow.jpg" />
+    <None Remove="Images\Items\oot_items\broken_goron_sword.jpg" />
+    <None Remove="Images\Items\oot_items\claim_check.jpg" />
+    <None Remove="Images\Items\oot_items\cojiro.jpg" />
+    <None Remove="Images\Items\oot_items\cucco_a.jpg" />
+    <None Remove="Images\Items\oot_items\cucco_c.jpg" />
+    <None Remove="Images\Items\oot_items\deku_nut.jpg" />
+    <None Remove="Images\Items\oot_items\deku_stick.jpg" />
+    <None Remove="Images\Items\oot_items\dins_fire.jpg" />
+    <None Remove="Images\Items\oot_items\egg_a.jpg" />
+    <None Remove="Images\Items\oot_items\egg_c.jpg" />
+    <None Remove="Images\Items\oot_items\eye_drops.jpg" />
+    <None Remove="Images\Items\oot_items\farores_wind.jpg" />
+    <None Remove="Images\Items\oot_items\frog.jpg" />
+    <None Remove="Images\Items\oot_items\gauntlets_gold.jpg" />
+    <None Remove="Images\Items\oot_items\gauntlets_iron.jpg" />
+    <None Remove="Images\Items\oot_items\goron_bracelets.jpg" />
+    <None Remove="Images\Items\oot_items\hammer.jpg" />
+    <None Remove="Images\Items\oot_items\hookshot.jpg" />
+    <None Remove="Images\Items\oot_items\lens.jpg" />
+    <None Remove="Images\Items\oot_items\longshot.jpg" />
+    <None Remove="Images\Items\oot_items\magic_bean.jpg" />
+    <None Remove="Images\Items\oot_items\mask_bunny.jpg" />
+    <None Remove="Images\Items\oot_items\mask_creepy.jpg" />
+    <None Remove="Images\Items\oot_items\mask_gerudo.jpg" />
+    <None Remove="Images\Items\oot_items\mask_goron.jpg" />
+    <None Remove="Images\Items\oot_items\mask_keaton.jpg" />
+    <None Remove="Images\Items\oot_items\mask_skull.jpg" />
+    <None Remove="Images\Items\oot_items\mask_truth.jpg" />
+    <None Remove="Images\Items\oot_items\mask_zora.jpg" />
+    <None Remove="Images\Items\oot_items\nayrus_love.jpg" />
+    <None Remove="Images\Items\oot_items\ocarina_fairy.jpg" />
+    <None Remove="Images\Items\oot_items\ocarina_time.jpg" />
+    <None Remove="Images\Items\oot_items\odd_mushroom.jpg" />
+    <None Remove="Images\Items\oot_items\odd_potion.jpg" />
+    <None Remove="Images\Items\oot_items\perscription.jpg" />
+    <None Remove="Images\Items\oot_items\saw.jpg" />
+    <None Remove="Images\Items\oot_items\scale_gold.jpg" />
+    <None Remove="Images\Items\oot_items\scale_silver.jpg" />
+    <None Remove="Images\Items\oot_items\shield_deku.jpg" />
+    <None Remove="Images\Items\oot_items\shield_hylian.jpg" />
+    <None Remove="Images\Items\oot_items\shield_mirror.jpg" />
+    <None Remove="Images\Items\oot_items\slingshot.jpg" />
+    <None Remove="Images\Items\oot_items\sword_goron.jpg" />
+    <None Remove="Images\Items\oot_items\sword_kokiri.jpg" />
+    <None Remove="Images\Items\oot_items\sword_master.jpg" />
+    <None Remove="Images\Items\oot_items\tunic_goron.jpg" />
+    <None Remove="Images\Items\oot_items\tunic_zora.jpg" />
+    <None Remove="Images\Items\oot_items\wallet_adult.jpg" />
+    <None Remove="Images\Items\oot_items\wallet_child.jpg" />
+    <None Remove="Images\Items\oot_items\zelda_letter.jpg" />
+    <None Remove="Images\Items\oot_item_background.png" />
     <None Remove="Images\mm_map.jpg" />
     <None Remove="Images\oot_map.jpg" />
   </ItemGroup>
@@ -21,6 +94,225 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Items\oot_items\arrow_fire.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\arrow_ice.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\arrow_light.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bomb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bombchu.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\boomerang.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\boots_hover.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\boots_iron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_big_poe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_blue.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_blue_fire.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_bug.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_empty.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_fairy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_fish.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_green.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_letter.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_milk.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_milk_half.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_poe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bottle_red.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\bow.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\broken_goron_sword.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\claim_check.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\cojiro.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\cucco_a.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\cucco_c.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\deku_nut.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\deku_stick.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\dins_fire.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\egg_a.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\egg_c.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\eye_drops.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\farores_wind.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\frog.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\gauntlets_gold.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\gauntlets_iron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\goron_bracelets.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\hammer.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\hookshot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\lens.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\longshot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\magic_bean.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_bunny.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_creepy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_gerudo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_goron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_keaton.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_skull.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_truth.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\mask_zora.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\nayrus_love.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\ocarina_fairy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\ocarina_time.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\odd_mushroom.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\odd_potion.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\perscription.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\saw.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\scale_gold.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\scale_silver.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\shield_deku.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\shield_hylian.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\shield_mirror.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\slingshot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\sword_goron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\sword_kokiri.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\sword_master.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\tunic_goron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\tunic_zora.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\wallet_adult.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\wallet_child.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_items\zelda_letter.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Items\oot_item_background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\mm_map.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

@@ -32,156 +32,182 @@
         <materialDesign:DialogHost.DialogContent>
             <Label Content="WIP"/>
         </materialDesign:DialogHost.DialogContent>
-        <Grid x:Name="grdMain" Margin="3">        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="95*"/>
-        </Grid.RowDefinitions>
-        <Menu x:Name="mnuAppMenu" HorizontalAlignment="Left" Grid.Row="0">
-            <MenuItem x:Name="mnuiFile" Width="111" Height="20" Foreground="White"
+        <Grid x:Name="grdMain" Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="95*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="75*"/>
+            </Grid.ColumnDefinitions>
+            <Menu x:Name="mnuAppMenu" HorizontalAlignment="Left" Grid.Row="0" Grid.ColumnSpan="2">
+                <MenuItem x:Name="mnuiFile" Width="111" Height="20" Foreground="White"
                       Background="{Binding Path=Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
-                <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <materialDesign:PackIcon Kind="File"/>
-                        <TextBlock Text="File" Padding="2"/>
-                    </StackPanel>
-                </MenuItem.Header>
-                <MenuItem x:Name="mnuiTest" Click="mnuiTest_Click" Foreground="AntiqueWhite">
                     <MenuItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Room"/>
-                            <TextBlock Text="Load Room..." Padding="2"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="File"/>
+                            <TextBlock Text="File" Padding="2"/>
                         </StackPanel>
                     </MenuItem.Header>
+                    <MenuItem x:Name="mnuiTest" Click="mnuiTest_Click" Foreground="AntiqueWhite">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Room"/>
+                                <TextBlock Text="Load Room..." Padding="2"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem x:Name="mnuiEnableOcarina" Click="mnuiEnableOcarina_Click" Foreground="AntiqueWhite">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Ocarina"/>
+                                <TextBlock Text="Enable OoT" Padding="2"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="mnuiEnableMajora" Click="mnuiEnableMajora_Click" Foreground="AntiqueWhite">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="GuyFawkesMask"/>
+                                <TextBlock Text="Enable Majora" Padding="2"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
                 </MenuItem>
-            </MenuItem>
-        </Menu>
-        <TabControl x:Name="tcTabs" Grid.Row="1">
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Ocarina"/>
-                        <Label Foreground="White" Content="OoT"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <TabItem.Content>
-                    <Grid x:Name="grdOoTMap" Background="Black">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="16*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="16*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                        </Grid.RowDefinitions>
-                        <Image Grid.ColumnSpan="18" Grid.RowSpan="10" Source="/Images/oot_map.jpg" />
+            </Menu>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="5">
+                <uc:uccOcarinaItemView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <GridSplitter x:Name="grdSplitterItems" Height="5" VerticalAlignment="Stretch" Background="DarkMagenta" HorizontalAlignment="Stretch"/>
+                
+            </StackPanel>
+            <TabControl x:Name="tcTabs" Grid.Row="1" Grid.Column="1">
+                <TabItem IsEnabled="{Binding ElementName=wndMain,Path=EnableOcarina,UpdateSourceTrigger=PropertyChanged}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Ocarina"/>
+                            <Label Foreground="White" Content="OoT"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Grid x:Name="grdOoTMap" Background="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="16*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="16*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.ColumnSpan="18" Grid.RowSpan="10" Source="/Images/oot_map.jpg" />
 
-                        <!--#region OoT Dungeon Controls -->
-                        <uc:uccDungeonDropdown x:Name="cmbxDeku" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6" Title="Deku"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxDC" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="1" Title="DC"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxJabu" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="2" Title="Jabu"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxBOTW" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="3" Title="BOTW"/>
-                        
-                        <uc:uccDungeonDropdown x:Name="cmbxGTG" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="2" Title="GTG"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxIceCavern" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="0" Title="IceCavern"/>
+                            <!--#region OoT Dungeon Controls -->
+                            <uc:uccDungeonDropdown x:Name="cmbxDeku" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6" Title="Deku"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxDC" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="1" Title="DC"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxJabu" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="2" Title="Jabu"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxBOTW" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="3" Title="BOTW"/>
 
-                        <uc:uccDungeonDropdown x:Name="cmbxForest" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4" Title="Forest"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxFire" Grid.Column="10" Grid.ColumnSpan="4" Grid.Row="0" Title="Fire"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxWater" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="10" Title="Water"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxSpirit" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6" Title="Spirit"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxShadow" Grid.Column="9" Grid.ColumnSpan="4" Grid.Row="2" Title="Shadow"/>
-                        <!--#endregion-->
-                    </Grid>
-                </TabItem.Content>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="GuyFawkesMask"/>
-                        <Label Foreground="White" Content="Majora"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <TabItem.Content>
-                    <Grid x:Name="grdMMMap" Background="Black">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="16*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="16*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                            <RowDefinition Height="10*"/>
-                        </Grid.RowDefinitions>
-                        <Image Grid.ColumnSpan="18" Grid.RowSpan="10" Source="/Images/mm_map.jpg" />
-                        
-                        <!--#region MM Dungeon Controls -->
-                        <uc:uccDungeonDropdown x:Name="cmbxSwamp" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="6"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxSpiderSwamp" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="8"/>
-                        
-                        <uc:uccDungeonDropdown x:Name="cmbxOcean" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxSpiderOcean" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="7"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxPirate" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6"/>
-                        
-                        <uc:uccDungeonDropdown x:Name="cmbxSnow" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="2"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxGTG" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="2" Title="GTG"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxIceCavern" Grid.Column="14" Grid.ColumnSpan="3" Grid.Row="0" Title="IceCavern"/>
 
-                        <uc:uccDungeonDropdown x:Name="cmbxCanyon" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxInvertedStone" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="8"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxIkana" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxBeneathWell" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="2"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxBeneathWellBack" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="3"/>
-                        <uc:uccDungeonDropdown x:Name="cmbxShrine" Grid.Column="7" Grid.ColumnSpan="4" Grid.Row="4"/>
-                        <!--#endregion-->
-                    </Grid>
-                </TabItem.Content>
-            </TabItem>
-        </TabControl>
-    </Grid>
+                            <uc:uccDungeonDropdown x:Name="cmbxForest" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4" Title="Forest"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxFire" Grid.Column="10" Grid.ColumnSpan="4" Grid.Row="0" Title="Fire"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxWater" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="10" Title="Water"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxSpirit" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6" Title="Spirit"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxShadow" Grid.Column="9" Grid.ColumnSpan="4" Grid.Row="2" Title="Shadow"/>
+                            <!--#endregion-->
+                        </Grid>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem IsEnabled="{Binding ElementName=wndMain,Path=EnableMajora,UpdateSourceTrigger=PropertyChanged}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="GuyFawkesMask"/>
+                            <Label Foreground="White" Content="Majora"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Grid x:Name="grdMMMap" Background="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="16*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="16*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.ColumnSpan="18" Grid.RowSpan="10" Source="/Images/mm_map.jpg" />
+
+                            <!--#region MM Dungeon Controls -->
+                            <uc:uccDungeonDropdown x:Name="cmbxSwamp" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="6"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxSpiderSwamp" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="8"/>
+
+                            <uc:uccDungeonDropdown x:Name="cmbxOcean" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxSpiderOcean" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="7"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxPirate" Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6"/>
+
+                            <uc:uccDungeonDropdown x:Name="cmbxSnow" Grid.Column="6" Grid.ColumnSpan="4" Grid.Row="2"/>
+
+                            <uc:uccDungeonDropdown x:Name="cmbxCanyon" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="6"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxInvertedStone" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="8"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxIkana" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="4"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxBeneathWell" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="2"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxBeneathWellBack" Grid.Column="13" Grid.ColumnSpan="4" Grid.Row="3"/>
+                            <uc:uccDungeonDropdown x:Name="cmbxShrine" Grid.Column="7" Grid.ColumnSpan="4" Grid.Row="4"/>
+                            <!--#endregion-->
+                        </Grid>
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+        </Grid>
     </materialDesign:DialogHost>
 </Window>

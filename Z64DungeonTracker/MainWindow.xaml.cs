@@ -22,14 +22,43 @@ namespace Z64DungeonTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool _enableOcarina;
+
+        public bool EnableOcarina
+        {
+            get { return _enableOcarina; }
+            set { _enableOcarina = value; }
+        }
+
+        private bool _enableMajora;
+
+        public bool EnableMajora
+        {
+            get { return _enableMajora; }
+            set { _enableMajora = value; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            EnableOcarina = true;
+            EnableMajora = true;
         }
+
+        private void mnuiTest_Click(object sender, RoutedEventArgs e)
+        {
+            Test();
+        }
+
+        private void mnuiEnableOcarina_Click(object sender, RoutedEventArgs e)
+            => EnableOcarina = !EnableOcarina;
+
+        private void mnuiEnableMajora_Click(object sender, RoutedEventArgs e)
+            => EnableMajora = !EnableMajora;
 
         public void Test()
         {
-            var userDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\z64trackers\";
+            var userDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\z64trackers\";
             var cfgFile = Path.Combine(userDocsPath, "z64dungeontracker.txt");
             if (File.Exists(cfgFile))
             {
@@ -59,7 +88,9 @@ namespace Z64DungeonTracker
                     {
                         Debug.WriteLine(dungeon);
                     }
-                } catch(Exception e) {
+                }
+                catch (Exception e)
+                {
                     Debug.WriteLine($"<Error> Dungeons: {e.Message}{Environment.NewLine}{e.Source}");
                 }
 
@@ -82,11 +113,6 @@ namespace Z64DungeonTracker
                     Debug.WriteLine($"<Error> Rooms: {e.Message}{Environment.NewLine}{e.Source}");
                 }
             }
-        }
-
-        private void mnuiTest_Click(object sender, RoutedEventArgs e)
-        {
-            Test();
         }
     }
 }
