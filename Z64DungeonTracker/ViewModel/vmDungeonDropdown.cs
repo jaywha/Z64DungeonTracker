@@ -9,11 +9,11 @@ using System.Windows.Media;
 
 namespace Z64DungeonTracker.ViewModel
 {
-    public class vmMainWindow : DependencyObject
+    public class vmDungeonDropdown : DependencyObject
     {
         public ObservableCollection<string> Dungeons { get; private set; }
 
-        public vmMainWindow() {
+        public vmDungeonDropdown() {
             Dungeons = new ObservableCollection<string>() {
                 "?",
                 "Deku",

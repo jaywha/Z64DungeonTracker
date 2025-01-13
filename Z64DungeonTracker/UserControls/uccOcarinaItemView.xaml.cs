@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Z64DungeonTracker.ViewModel;
 
 namespace Z64DungeonTracker.UserControls
 {
@@ -20,41 +22,39 @@ namespace Z64DungeonTracker.UserControls
     /// </summary>
     public partial class uccOcarinaItemView : UserControl
     {
-        public double[,] Items { get; set; } = new double[,] {
-            { 0.5d, 0.5d, 0.5d, 0.5d, 0.5d, 0.5d }, 
-            { 0.5d, 0.5d, 0.5d, 0.5d, 0.5d, 0.5d }, 
-            { 0.5d, 0.5d, 0.5d, 0.5d, 0.5d, 0.5d }, 
-            { 0.5d, 0.5d, 0.5d, 0.5d, 0.5d, 0.5d } 
-        };
+        private List<uccOcarinaItem> OcarinaItemList = new List<uccOcarinaItem>();
+        private readonly string ImageFilePath;
+
+        public vmOcarinaItemView dataContextVM = new vmOcarinaItemView();
 
         public uccOcarinaItemView()
         {
             InitializeComponent();
+            ImageFilePath = "/Images/Items/oot_items/";
+            DataContext = dataContextVM;
+
+            InitItemImages();
         }
 
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        public void InitItemImages()
         {
-            if (sender != null && sender is Image)
+            var itemImageNameEnumerator = dataContextVM.ItemImageNames.GetEnumerator();
+            itemImageNameEnumerator.MoveNext(); // get first element
+            foreach (var gridItem in grdItems.Children)
             {
-                if (e.ChangedButton == MouseButton.Left)
+                if (gridItem != null && gridItem is uccOcarinaItem ocarinaItem)
                 {
-                    var img = (sender as Image)!;
-                    var indexes = img.Tag.ToString()!.Split(',');
-                    var currOpac = Items[int.Parse(indexes[0]), int.Parse(indexes[1])];
-
-                    if (currOpac == 1.0d)
+                    var itemName = itemImageNameEnumerator.Current;
+                    //TODO: Make item name a string array dependency property on uccOcarinaItem
+                    //....: This will allow user to cycle through the item states of that item.
+                    if (itemName.Contains('|'))
                     {
-                        img.Opacity = 0.5d;
-                        Items[int.Parse(indexes[0]), int.Parse(indexes[1])] = 0.5d;
+                        itemName = itemName.Split("|")[0];
                     }
-                    else
-                    {
-                        img.Opacity = 1.0d;
-                        Items[int.Parse(indexes[0]), int.Parse(indexes[1])] = 1.0d;
-                    }
-                } else if (e.ChangedButton == MouseButton.Right)
-                {
-
+                    var itemBitmap = new BitmapImage(new Uri($"{ImageFilePath}{itemName}.jpg", UriKind.Relative));
+                    ocarinaItem.SetValue(uccOcarinaItem.ItemImageSourceProperty, itemBitmap);
+                    OcarinaItemList.Add(ocarinaItem);
+                    itemImageNameEnumerator.MoveNext();
                 }
             }
         }

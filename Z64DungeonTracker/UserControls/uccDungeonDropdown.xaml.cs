@@ -24,7 +24,7 @@ namespace Z64DungeonTracker.UserControls
     /// </summary>
     public partial class uccDungeonDropdown : UserControl
     {
-        public vmMainWindow dataContextVM { get; } = new();
+        public vmDungeonDropdown dataContextVM { get; } = new();
 
         public string? Title
         {
